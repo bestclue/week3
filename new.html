@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Sample</title>
+</head>
+<body>
+    <div>
+    <input type ="text" id="gugudan">
+    <button onclick=prt()>확인</button>
+    </div>
+    <div id="result"></div>
+    <script>
+
+        const multi = 9;
+
+         function prt() {
+            let calInput = document.getElementById("gugudan").value;
+            const rslt = document.getElementById("result"); 
+            const status = document.getElementsByClassName("line");
+            while (status.length > 0){
+                status[status.length - 1].remove();
+            }
+            for (let i = 1; i <= 9; i++){
+                let result = i * calInput;
+                const add = document.createElement("div");
+                add.setAttribute("class","line");
+                add.innerHTML = calInput + " * " + i +" = " + result;
+                rslt.appendChild(add);
+            }
+        }
+    </script>
+</body>
+</html>
